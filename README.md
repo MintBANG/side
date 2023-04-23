@@ -62,7 +62,7 @@ spec:
     image: ehkehk/sidecar:1.0
     env:
     - name: CONTENTS_SOURCE_URL
-      value: "https://github.com/MintBANG/side.git"
+      value: "https://github.com/[GITHUB_REPOSITORY_주소]"
     volumeMounts:
     - mountPath: /data
       name: contents-vol
