@@ -2,7 +2,7 @@
 
 centos8
 
-###[1] 먼저 도커 허브에 올릴 이미지를 생성한다.
+### [1] 먼저 도커 허브에 올릴 이미지를 생성한다.
 
 Dockerfile 작성
 ```
@@ -44,7 +44,7 @@ docker build --tag [도커허브명]/[레포지토리_이름]:[tag]
 docker push [도커허브명]/[레포지토리_이름]:[tag]
 ```
 
-###[2] Pods 작성
+### [2] Pods 작성
 ```
 apiVersion: v1
 kind: Pod
@@ -73,12 +73,14 @@ spec:
  ```
  
 > "contents-vol"라는 볼륨 안에 nginx, puller 컨테이너
+> 
 > nginx 컨테이너 : /usr/share/nignx/html 디렉토리를 emptydir로 마운트 -> 컨텐츠를 사용자들이 요청하면 전송
+> 
 > puller 컨테이너 : git에서 코드를 받아오는 sh를 실행하는 컨테이너
 /data 디렉토리를 emptydir로 마운트 -> github에서 1분에 한번씩 컨텐츠 pull
 
 
-###[3] 사이드 카 IP로 접속하기
+### [3] 사이드 카 IP로 접속하기
 ```
 curl http://[사이드카_IP]
 ```
